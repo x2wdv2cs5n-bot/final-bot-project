@@ -19,3 +19,111 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxor & Aswan Luxury Tours</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #b8860b; }
+        .service-card { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
+        .service-card img { width: 120px; height: 100px; object-fit: cover; }
+        .service-info { padding: 10px; flex-grow: 1; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        .btn-whatsapp { background: #25D366; color: white; padding: 15px; border: none; width: 100%; border-radius: 5px; font-size: 18px; cursor: pointer; font-weight: bold; }
+        .btn-whatsapp:hover { background: #128C7E; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Luxor & Aswan Tours</h1>
+    <p style="text-align:center;">Book your dream trip now!</p>
+
+    <label>Full Name</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Age</label>
+    <input type="number" id="age" placeholder="Your Age">
+
+    <label>Nationality</label>
+    <input type="text" id="nationality" placeholder="Your Country">
+
+    <h3>Select Your Services:</h3>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1572431441273-07f52140c99a?auto=format&fit=crop&w=200&q=80" alt="East Bank">
+        <div class="service-info">
+            <input type="checkbox" class="service" value="East Bank (Karnak & Luxor Temples)"> <b>East Bank</b> (Karnak & Luxor)
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=200&q=80" alt="West Bank">
+        <div class="service-info">
+            <input type="checkbox" class="service" value="West Bank (Kings Valley & Hatshepsut)"> <b>West Bank</b> (Kings Valley)
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1520640023173-50a135e35804?auto=format&fit=crop&w=200&q=80" alt="Balloon">
+        <div class="service-info">
+            <input type="checkbox" class="service" value="Hot Air Balloon Ride"> <b>Hot Air Balloon</b>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1563287664-9642517865f1?auto=format&fit=crop&w=200&q=80" alt="Felucca">
+        <div class="service-info">
+            <input type="checkbox" class="service" value="Felucca Nile Trip"> <b>Felucca</b> (Nile Boat Trip)
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1590076212644-672109439169?auto=format&fit=crop&w=200&q=80" alt="Aswan">
+        <div class="service-info">
+            <input type="checkbox" class="service" value="Aswan City Tour & Philae"> <b>Aswan Trip</b> (Philae Temple)
+        </div>
+    </div>
+
+    <label>Car Service & Guides</label>
+    <select id="extra">
+        <option value="None">Extra Services</option>
+        <option value="Private Car with Driver">Private Car Service</option>
+        <option value="Multilingual Guide">Professional Guide (All Languages)</option>
+        <option value="Hotel Booking">Hotel Reservation Service</option>
+    </select>
+
+    <button class="btn-whatsapp" onclick="sendWhatsApp()">Book via WhatsApp</button>
+</div>
+
+<script>
+    function sendWhatsApp() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const nationality = document.getElementById('nationality').value;
+        const extra = document.getElementById('extra').value;
+        
+        let selectedServices = [];
+        document.querySelectorAll('.service:checked').forEach((checkbox) => {
+            selectedServices.push(checkbox.value);
+        });
+
+        const phoneNumber = "201007419083"; // Your saved number
+        const message = `*New Booking Request*%0A%0A` +
+                        `*Name:* ${name}%0A` +
+                        `*Age:* ${age}%0A` +
+                        `*Nationality:* ${nationality}%0A` +
+                        `*Services:* ${selectedServices.join(", ")}%0A` +
+                        `*Extra:* ${extra}`;
+
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
