@@ -3,209 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxor Vibe Tours | Experience Ancient Egypt</title>
+    <title>Luxor Vibe Tours | Exclusive Travel Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #d4af37;
-            --dark-gold: #b8860b;
-            --bg-light: #fcfaf7;
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            --soft-white: #fdfdfd;
+            --text-dark: #2d3436;
         }
 
         body { 
-            background-color: var(--bg-light);
-            color: #333;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
-        /* الجزء العلوي - اللوجو */
-        .header-section {
+        /* الهيدر الاحترافي */
+        .premium-header {
+            background: #fff;
+            padding: 80px 20px;
             text-align: center;
-            padding: 60px 20px;
-            background: radial-gradient(circle, #ffffff, #f3ede2);
+            border-bottom: 1px solid #eee;
         }
 
-        .logo-circle {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto;
-            border-radius: 50%;
-            border: 6px solid var(--gold);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .logo-circle h1 {
-            color: var(--dark-gold);
-            font-size: 24px;
-            margin: 10px 0 0 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo-circle p {
-            color: var(--gold);
-            font-size: 12px;
-            text-transform: uppercase;
-            margin: 5px 0;
-            letter-spacing: 2px;
-        }
-
-        /* الحاوية الرئيسية */
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            color: #444;
-            margin: 40px 0 20px;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 10px;
+        .logo-box {
             display: inline-block;
+            border: 2px solid #d4af37;
+            padding: 30px 50px;
+            position: relative;
+            background: #fff;
         }
 
-        /* تقسيم الكروت (3 في الصف) */
+        .logo-box h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            margin: 0;
+            letter-spacing: 3px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-box p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        /* تصميم الكروت */
+        .main-content {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .category-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-gradient);
+            margin: 15px auto;
+        }
+
         .tour-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 40px;
+            margin-bottom: 80px;
         }
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            transition: 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-        }
-
-        /* تعديل جودة وعرض الصورة */
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover; /* لضمان أفضل دقة وشكل للصورة */
-            display: block;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-content h3 {
-            margin: 0 0 10px;
-            color: #222;
-            font-size: 20px;
-        }
-
-        .card-content p {
-            color: #666;
-            font-size: 15px;
-            margin: 0;
-        }
-
-        /* زر الواتساب */
-        .footer-booking {
-            text-align: center;
-            padding: 60px 20px;
+        .premium-card {
             background: #fff;
-            margin-top: 40px;
+            border-radius: 0; /* شكل مودرن حاد */
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #f0f0f0;
         }
 
-        .btn-wa {
-            background: #25D366;
-            color: white;
-            padding: 18px 45px;
-            border-radius: 50px;
+        .premium-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .premium-card:hover .img-container img {
+            transform: scale(1.1);
+        }
+
+        .card-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card-info p {
+            font-size: 15px;
+            color: #636e72;
+            line-height: 1.8;
+        }
+
+        /* زر الحجز الفخم */
+        .cta-section {
+            background: #111;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .btn-luxury {
+            background: var(--gold-gradient);
+            color: #fff;
+            padding: 20px 60px;
+            font-size: 18px;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn-luxury:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(184, 134, 11, 0.4);
+        }
+
+        /* تحسين العرض على الموبايل */
+        @media (max-width: 768px) {
+            .logo-box h1 { font-size: 28px; }
+            .tour-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="header-section">
-    <div class="logo-circle">
-        <div style="font-size: 50px; color: var(--gold);">𓋹</div>
-        <h1>Luxor Vibe Tours</h1>
-        <p>Experience Ancient Egypt</p>
-    </div>
-</div>
+    <header class="premium-header">
+        <div class="logo-box">
+            <h1>LUXOR VIBE TOURS</h1>
+            <p>Experience Antiquity</p>
+        </div>
+    </header>
 
-<div class="container">
-    
-    <div class="section-title">1. The West Bank Wonders</div>
-    <div class="tour-grid">
-        <div class="card">
-            <img src="https://i.ibb.co/cShdYkBB/image.png" alt="Valley of the Kings">
-            <div class="card-content">
-                <h3>Valley of the Kings</h3>
-                <p>Explore the magnificent tombs of the ancient Pharaohs.</p>
+    <div class="main-content">
+        <h2 class="category-title">01. The West Bank</h2>
+        <div class="tour-grid">
+            <div class="premium-card">
+                <div class="img-container">
+                    <img src="https://i.ibb.co/cShdYkBB/image.png" alt="Valley of the Kings">
+                </div>
+                <div class="card-info">
+                    <h3>Valley of the Kings</h3>
+                    <p>Unlock the secrets of the royal afterlife. A private journey through the most famous necropolis in history.</p>
+                </div>
+            </div>
+
+            <div class="premium-card">
+                <div class="img-container">
+                    <img src="https://i.ibb.co/b8hLnJp/image.png" alt="Hatshepsut">
+                </div>
+                <div class="card-info">
+                    <h3>Hatshepsut Temple</h3>
+                    <p>Admire the temple of the Queen, a masterpiece of symmetry and ancient engineering.</p>
+                </div>
+            </div>
+
+            <div class="premium-card">
+                <div class="img-container">
+                    <img src="https://i.ibb.co/QvRyzNq2/image.png" alt="Habu Temple">
+                </div>
+                <div class="card-info">
+                    <h3>Habu & Colossi</h3>
+                    <p>Witness the towering statues of Memnon and the vibrant colors of Medinet Habu.</p>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img src="https://i.ibb.co/b8hLnJp/image.png" alt="Hatshepsut">
-            <div class="card-content">
-                <h3>Hatshepsut Temple</h3>
-                <p>Witness the architectural glory of Egypt's most famous queen.</p>
+
+        <h2 class="category-title">02. East Bank & Sky Magic</h2>
+        <div class="tour-grid">
+            <div class="premium-card">
+                <div class="img-container">
+                    <img src="https://i.ibb.co/Zbs4rVh/image.png" alt="Karnak">
+                </div>
+                <div class="card-info">
+                    <h3>Karnak Temple</h3>
+                    <p>The largest religious complex ever built. A forest of massive pillars and ancient stories.</p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="https://i.ibb.co/QvRyzNq2/image.png" alt="Habu Temple">
-            <div class="card-content">
-                <h3>Habu & Colossi of Memnon</h3>
-                <p>Colorful inscriptions and massive stone statues.</p>
+
+            <div class="premium-card">
+                <div class="img-container">
+                    <img src="https://i.ibb.co/3DfLpXS/image.png" alt="Hot Air Balloon">
+                </div>
+                <div class="card-info">
+                    <h3>Hot Air Balloon</h3>
+                    <p>Ascend into the sky at sunrise for a breathtaking panoramic view of the ancient capital.</p>
+                </div>
+            </div>
+
+            <div class="premium-card">
+                <div class="img-container">
+                    <img src="https://i.ibb.co/tT3WLXyG/image.png" alt="Nile Sailing">
+                </div>
+                <div class="card-info">
+                    <h3>Nile Vibe</h3>
+                    <p>Private Felucca sailing and VIP car transfers across the historical cities of Egypt.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="section-title">2. East Bank & Adventures</div>
-    <div class="tour-grid">
-        <div class="card">
-            <img src="https://i.ibb.co/Zbs4rVh/image.png" alt="Karnak">
-            <div class="card-content">
-                <h3>Karnak & Luxor Temples</h3>
-                <p>The greatest religious complex in the world.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://i.ibb.co/3DfLpXS/image.png" alt="Balloon">
-            <div class="card-content">
-                <h3>Hot Air Balloon</h3>
-                <p>Sunrise magic over the temples from the sky.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://i.ibb.co/tT3WLXyG/image.png" alt="Felucca">
-            <div class="card-content">
-                <h3>Felucca & Car Transfers</h3>
-                <p>Private sailing and luxury car services across Egypt.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="footer-booking">
-    <a href="https://wa.me/201007419083?text=Hello!%20I%20want%20to%20book%20a%20tour%20with%20Luxor%20Vibe." class="btn-wa">Book via WhatsApp</a>
-    <p style="margin-top: 15px;">📞 01007419083</p>
-</div>
+    <section class="cta-section">
+        <h2>READY TO BOOK YOUR VIBE?</h2>
+        <p style="margin-bottom: 40px; color: #aaa;">Personalized Private Tours with Luxury Service.</p>
+        <a href="https://wa.me/201007419083?text=Hello!%20I%20want%20to%20book%20a%20private%20tour%20with%20Luxor%20Vibe." class="btn-luxury">RESERVE VIA WHATSAPP</a>
+    </section>
 
 </body>
 </html>
