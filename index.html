@@ -3,157 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxor vibe Tours</title>
+    <title>Luxor Vibe Tours | Explore with Mahmoud</title>
     <style>
         body { 
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover; background-attachment: fixed; color: #f1c40f; font-family: 'Georgia', serif; margin: 0; padding: 20px;
+            /* خلفية فاتحة مريحة للعين ومعاها صورة خفيفة للمعبد */
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://i.ibb.co/Zbs4rVh/image.png');
+            background-size: cover; background-attachment: fixed; color: #2c3e50; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0;
         }
-        .container { max-width: 850px; margin: auto; background: rgba(0, 0, 0, 0.75); padding: 30px; border: 2px solid #b8860b; border-radius: 20px; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
         
-        /* تصميم صورة صاحب الشغل */
-        .profile-section { text-align: center; margin-bottom: 20px; }
-        .profile-img { 
-            width: 150px; height: 150px; border-radius: 50%; border: 3px solid #ffcc00; 
-            object-fit: cover; box-shadow: 0 0 15px #ffcc00;
-        }
+        /* Header & Profile */
+        .header { display: flex; align-items: center; justify-content: center; gap: 30px; padding: 50px 0; flex-wrap: wrap; background: #fff; border-bottom: 5px solid #f1c40f; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 0 0 20px 20px; }
+        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid #f1c40f; object-fit: cover; }
+        .intro-text { text-align: left; max-width: 500px; }
+        h1 { font-size: 3.2em; color: #b8860b; margin: 0; font-weight: 800; }
+        .bio-tag { font-style: italic; color: #7f8c8d; font-size: 1.2em; margin-bottom: 10px; }
 
-        h1 { text-align: center; font-size: 2.8em; margin: 10px 0 0; color: #ffcc00; }
-        .bio { text-align: center; font-style: italic; color: #ddd; margin-bottom: 30px; }
-        
-        .contact-info { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 30px; border: 1px dashed #ffcc00; }
-        .contact-info a { color: #fff; text-decoration: none; margin: 0 10px; display: block; margin-top: 5px; }
+        /* Sections */
+        h2 { border-left: 10px solid #f1c40f; padding-left: 15px; color: #b8860b; text-transform: uppercase; margin-top: 60px; text-align: left; background: rgba(241, 196, 15, 0.1); padding: 10px; }
+        .tour-section { margin-bottom: 50px; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        .section-img { width: 100%; height: 450px; object-fit: cover; transition: 0.5s; }
+        .section-img:hover { transform: scale(1.03); }
+        .content { padding: 25px; }
+        h3 { color: #2c3e50; font-size: 1.8em; margin: 0 0 10px 0; }
+        p { color: #555; line-height: 1.8; font-size: 1.15em; }
 
-        h2 { border-bottom: 2px solid #ffcc00; padding-bottom: 10px; margin-top: 40px; color: #ffcc00; text-transform: uppercase; }
-        p { color: #ccc; line-height: 1.6; }
-        .section-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; margin: 15px 0; border: 1px solid #ffcc00; }
+        /* Booking Box */
+        .booking-box { background: #fff; padding: 40px; border-radius: 30px; border: 3px solid #25D366; text-align: center; margin: 60px 0; box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2); }
+        .btn-whatsapp { background: #25D366; color: white; padding: 18px 50px; border: none; border-radius: 50px; font-size: 24px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-whatsapp:hover { background: #1ebd5b; transform: translateY(-3px); }
         
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; background: #333; color: white; }
-        .btn-whatsapp { 
-            background: #25D366; color: white; padding: 20px; border: none; width: 100%; 
-            border-radius: 50px; font-size: 20px; cursor: pointer; font-weight: bold; 
-        }
+        .contact-info { margin-top: 25px; font-size: 1.1em; color: #7f8c8d; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <div class="header">
+        <img src="https://i.ibb.co/GQXLKSy7/image.png" class="profile-img" alt="Mahmoud">
+        <div class="intro-text">
+            <h1>Luxor Vibe Tours</h1>
+            <p class="bio-tag">Discover the magic of Egypt with Mahmoud</p>
+            <p>Welcome! I am <b>Mahmoud</b>, your local guide in Luxor. I specialize in private, high-quality tours that show you the real heart of our ancient city.</p>
+        </div>
+    </div>
+
+    <h2>The West Bank Wonders</h2>
     
-    <div class="profile-section">
-        <img src="https://via.placeholder.com/150" class="profile-img" alt="Manager Image">
-        <h1>Amun Luxor Tours</h1>
-        <div class="bio">Amun Luxor – Where history meets adventure.</div>
+    <div class="tour-section">
+        <img src="https://i.ibb.co/cShdYkBB/image.png" class="section-img" alt="Valley of the Kings">
+        <div class="content">
+            <h3>Valley of the Kings</h3>
+            <p>Step into the royal past. Explore the legendary tombs where the great Pharaohs rest in eternal glory.</p>
+        </div>
     </div>
 
-    <div class="contact-info">
-        <h3>Contact Us for Details</h3>
-        <a href="tel:01007419083">📞 Call: 01007419083</a>
-        <a href="mailto:montasrmahmoud180@gamil.com">✉️ Email: montasrmahmoud180@gamil.com</a>
+    <div class="tour-section">
+        <img src="https://i.ibb.co/b8hLnJp/image.png" class="section-img" alt="Hatshepsut">
+        <div class="content">
+            <h3>Queen Hatshepsut Temple</h3>
+            <p>Visit one of the most beautiful architectural wonders in the world, carved directly into the mountain.</p>
+        </div>
     </div>
 
-    <h2>West Bank Wonders</h2>
-    <img src="https://images.unsplash.com/photo-1539712105743-c603c626779a?auto=format&fit=crop&w=800&q=80" class="section-img">
-    <h3>Valley of the Kings & Queens</h3>
-    <p>Explore the royal tombs, including Tutankhamun and Nefertari. A journey through the afterlife of pharaohs.</p>
-    <h3>Hatshepsut & Habu Temples</h3>
-    <p>From the magnificent terrace temple of the female pharaoh to the vibrant carvings of Ramses III.</p>
-    <h3>Colossi of Memnon & More</h3>
-    <p>Witness the giant guardians and explore the Ramesseum and Deir el-Medina artisans' village.</p>
+    <div class="tour-section">
+        <img src="https://i.ibb.co/QvRyzNq2/image.png" class="section-img" alt="Habu Temple">
+        <div class="content">
+            <h3>Habu Temple & Colossi of Memnon</h3>
+            <p>See the best-preserved colors of ancient Egypt at Medinet Habu and the giant guardians of the desert.</p>
+        </div>
+    </div>
 
-    <h2>East Bank Treasures</h2>
-    <img src="https://images.unsplash.com/photo-1590076212644-672109439169?auto=format&fit=crop&w=800&q=80" class="section-img">
-    <h3>Karnak & Luxor Temples</h3>
-    <p>The world's largest religious complex and the heart of ancient Thebes, stunning by day and magical by night.</p>
+    <h2>The East Bank Treasures</h2>
+    <div class="tour-section">
+        <img src="https://i.ibb.co/Zbs4rVh/image.png" class="section-img" alt="Karnak">
+        <div class="content">
+            <h3>Karnak & Luxor Temples</h3>
+            <p>Explore the massive pillars of Karnak and the sunset beauty of Luxor Temple in the city center.</p>
+        </div>
+    </div>
 
-    <h2>Private Services</h2>
-    <p>✅ <b>Hot Air Balloon:</b> Sunrise flights over the Nile.<br>
-       ✅ <b>Felucca:</b> Traditional sailing at sunset.<br>
-       ✅ <b>Transport:</b> Private cars to Airports, Aswan, and beyond.<br>
-       ✅ <b>Guides:</b> Professional multilingual experts.</p>
+    <h2>Adventures & Services</h2>
+    <div class="tour-section">
+        <img src="https://i.ibb.co/3DfLpXS/image.png" class="section-img" alt="Balloon">
+        <div class="content">
+            <h3>Hot Air Balloon & Nile Sailing</h3>
+            <p>Experience the sunrise from the sky and the peaceful Nile on a traditional Felucca boat.</p>
+        </div>
+    </div>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
-        <h3>Book Your Tour</h3>
-        <input type="text" id="name" placeholder="Your Name">
-        <input type="text" id="nationality" placeholder="Nationality">
-        <select id="tour">
-            <option value="West Bank">West Bank Tour</option>
-            <option value="East Bank">East Bank Tour</option>
-            <option value="Full Package">Full Package (Luxor & Aswan)</option>
-        </select>
-        <button class="btn-whatsapp" onclick="sendWA()">Contact on WhatsApp</button>
+    <div class="booking-box">
+        <h3>Ready to start your adventure?</h3>
+        <p>Contact me personally to customize your private tour with a professional guide.</p>
+        <a href="https://wa.me/201007419083?text=Hello%20Mahmoud!%20I%20found%20your%20website%20Luxor%20Vibe%20and%20want%20to%20book." class="btn-whatsapp">Book on WhatsApp</a>
+        <div class="contact-info">
+            📞 01007419083 | ✉️ montasrmahmoud180@gmail.com
+        </div>
     </div>
 </div>
 
-<script>
-    function sendWA() {
-        const name = document.getElementById('name').value;
-        const nat = document.getElementById('nationality').value;
-        const tour = document.getElementById('tour').value;
-        const msg = `*Amun Luxor Tours*%0A%0AHello! I am ${name} from ${nat}.%0AInterested in: *${tour}*.%0APlease provide more details.`;
-        window.open(`https://wa.me/201007419083?text=${msg}`, '_blank');
-    }
-</script>
-
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Best private tours in Luxor and Aswan with Montaser. East & West Bank, Hot Air Balloon, and Felucca.">
-    <meta name="keywords" content="Luxor Tours, Aswan Tours, Valley of the Kings, Private Guide Luxor, Montaser Luxor">
-    
-    <title>LuxorPulse Tours | Best Private Guide in Luxor</title>
-    
-    <style>
-        body { 
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover; background-attachment: fixed; color: #f1c40f; font-family: 'Georgia', serif; margin: 0; padding: 20px;
-        }
-        .container { max-width: 850px; margin: auto; background: rgba(0, 0, 0, 0.85); padding: 30px; border: 2px solid #b8860b; border-radius: 20px; box-shadow: 0 0 20px #000; }
-        .contact-info { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; text-align: center; border: 1px dashed #ffcc00; margin: 20px 0; }
-        .contact-info a { color: #fff; text-decoration: none; display: block; margin: 5px; }
-        h1, h2 { color: #ffcc00; text-transform: uppercase; text-align: center; }
-        .section-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; border: 1px solid #ffcc00; margin: 15px 0; }
-        .btn-whatsapp { background: #25D366; color: white; padding: 20px; border: none; width: 100%; border-radius: 50px; font-size: 20px; cursor: pointer; font-weight: bold; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>LuxorPulse Tours</h1>
-    <p style="text-align:center; color:#ddd;">Where History Meets Adventure – Experience Luxor with Local Experts</p>
-
-    <div class="contact-info">
-        <h3>Contact Montaser Directly</h3>
-        <a href="tel:01007419083">📞 Call: 01007419083</a>
-        <a href="mailto:montasrmahmoud180@gmail.com">✉️ Email: montasrmahmoud180@gmail.com</a>
-    </div>
-
-    <h2>West Bank Adventures</h2>
-    <img src="https://images.unsplash.com/photo-1539712105743-c603c626779a?auto=format&fit=crop&w=800&q=80" class="section-img">
-    <p>Discover the Valley of the Kings, Hatshepsut Temple, and the giant Colossi of Memnon. Personalized tours for an unforgettable experience.</p>
-
-    <h2>Private Services</h2>
-    <p>✅ Sunrise Hot Air Balloon<br>✅ Sunset Felucca Nile Trip<br>✅ Private Airport Transfers<br>✅ Multilingual Tour Guides</p>
-
-    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-top: 30px;">
-        <h3>Book Your Private Tour</h3>
-        <input type="text" id="name" placeholder="Your Name" style="width:95%; padding:10px; margin-bottom:10px;">
-        <input type="text" id="nat" placeholder="Nationality" style="width:95%; padding:10px; margin-bottom:10px;">
-        <button class="btn-whatsapp" onclick="sendWA()">Message on WhatsApp</button>
-    </div>
-</div>
-
-<script>
-    function sendWA() {
-        const name = document.getElementById('name').value;
-        const nat = document.getElementById('nat').value;
-        const msg = `Hello Montaser! I'm ${name} from ${nat}. I found your website LuxorPulse and I want to book a tour.`;
-        window.open(`https://wa.me/201007419083?text=${msg}`, '_blank');
-    }
-</script>
-</body>
-</html>
-
