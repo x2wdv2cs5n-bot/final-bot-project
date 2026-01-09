@@ -3,103 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxor Vibe Tours | Explore with Mahmoud</title>
+    <title>Luxor Vibe Tours | Experience Ancient Egypt</title>
     <style>
         body { 
-            /* خلفية فاتحة مريحة للعين ومعاها صورة خفيفة للمعبد */
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://i.ibb.co/Zbs4rVh/image.png');
-            background-size: cover; background-attachment: fixed; color: #2c3e50; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0;
+            background: radial-gradient(circle, #ffffff 0%, #e8e1d5 100%);
+            color: #333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        
-        /* Header & Profile */
-        .header { display: flex; align-items: center; justify-content: center; gap: 30px; padding: 50px 0; flex-wrap: wrap; background: #fff; border-bottom: 5px solid #f1c40f; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 0 0 20px 20px; }
-        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid #f1c40f; object-fit: cover; }
-        .intro-text { text-align: left; max-width: 500px; }
-        h1 { font-size: 3.2em; color: #b8860b; margin: 0; font-weight: 800; }
-        .bio-tag { font-style: italic; color: #7f8c8d; font-size: 1.2em; margin-bottom: 10px; }
 
-        /* Sections */
-        h2 { border-left: 10px solid #f1c40f; padding-left: 15px; color: #b8860b; text-transform: uppercase; margin-top: 60px; text-align: left; background: rgba(241, 196, 15, 0.1); padding: 10px; }
-        .tour-section { margin-bottom: 50px; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        .section-img { width: 100%; height: 450px; object-fit: cover; transition: 0.5s; }
-        .section-img:hover { transform: scale(1.03); }
-        .content { padding: 25px; }
-        h3 { color: #2c3e50; font-size: 1.8em; margin: 0 0 10px 0; }
-        p { color: #555; line-height: 1.8; font-size: 1.15em; }
+        /* Header & Logo Section */
+        .header-top {
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-        /* Booking Box */
-        .booking-box { background: #fff; padding: 40px; border-radius: 30px; border: 3px solid #25D366; text-align: center; margin: 60px 0; box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2); }
-        .btn-whatsapp { background: #25D366; color: white; padding: 18px 50px; border: none; border-radius: 50px; font-size: 24px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .btn-whatsapp:hover { background: #1ebd5b; transform: translateY(-3px); }
+        /* تصميم اللوجو الذهبي المطابق للصورة */
+        .gold-logo-circle {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: #fff;
+            border: 6px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .gold-logo-circle h1 {
+            color: #b8860b;
+            font-size: 26px;
+            margin: 10px 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .gold-logo-circle span {
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Tour Grid Section */
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         
-        .contact-info { margin-top: 25px; font-size: 1.1em; color: #7f8c8d; font-weight: bold; }
+        .section-title {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .tour-card {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .tour-card:hover { transform: translateY(-5px); }
+
+        .tour-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .tour-card-content { padding: 20px; }
+        
+        .tour-card-content h3 {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            color: #222;
+        }
+
+        .tour-card-content p {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Booking Section */
+        .booking-footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+        }
+
     </style>
 </head>
 <body>
 
+<div class="header-top">
+    <div class="gold-logo-circle">
+        <div style="font-size: 60px; color: #d4af37;">𓅃</div> 
+        <h1>Luxor Vibe Tours</h1>
+        <span>Experience Ancient Egypt</span>
+    </div>
+</div>
+
 <div class="container">
-    <div class="header">
-        <img src="https://i.ibb.co/GQXLKSy7/image.png" class="profile-img" alt="Mahmoud">
-        <div class="intro-text">
-            <h1>Luxor Vibe Tours</h1>
-            <p class="bio-tag">Discover the magic of Egypt with Mahmoud</p>
-            <p>Welcome! I am <b>Mahmoud</b>, your local guide in Luxor. I specialize in private, high-quality tours that show you the real heart of our ancient city.</p>
-        </div>
-    </div>
-
-    <h2>The West Bank Wonders</h2>
     
-    <div class="tour-section">
-        <img src="https://i.ibb.co/cShdYkBB/image.png" class="section-img" alt="Valley of the Kings">
-        <div class="content">
-            <h3>Valley of the Kings</h3>
-            <p>Step into the royal past. Explore the legendary tombs where the great Pharaohs rest in eternal glory.</p>
+    <div class="section-title">1. The West Bank Wonders</div>
+    <div class="tour-grid">
+        <div class="tour-card">
+            <img src="https://i.ibb.co/cShdYkBB/image.png" alt="Valley of the Kings">
+            <div class="tour-card-content">
+                <h3>Valley of the Kings</h3>
+                <p>Explore the royal tombs where history remains eternal.</p>
+            </div>
+        </div>
+        <div class="tour-card">
+            <img src="https://i.ibb.co/b8hLnJp/image.png" alt="Hatshepsut">
+            <div class="tour-card-content">
+                <h3>Hatshepsut Temple</h3>
+                <p>A masterpiece of ancient architecture carved into the mountains.</p>
+            </div>
+        </div>
+        <div class="tour-card">
+            <img src="https://i.ibb.co/QvRyzNq2/image.png" alt="Habu Temple">
+            <div class="tour-card-content">
+                <h3>Habu & Colossi</h3>
+                <p>The best preserved colors of Ramses III and the massive stone guardians.</p>
+            </div>
         </div>
     </div>
 
-    <div class="tour-section">
-        <img src="https://i.ibb.co/b8hLnJp/image.png" class="section-img" alt="Hatshepsut">
-        <div class="content">
-            <h3>Queen Hatshepsut Temple</h3>
-            <p>Visit one of the most beautiful architectural wonders in the world, carved directly into the mountain.</p>
+    <div class="section-title">2. Adventure & East Bank Treasures</div>
+    <div class="tour-grid">
+        <div class="tour-card">
+            <img src="https://i.ibb.co/Zbs4rVh/image.png" alt="Karnak">
+            <div class="tour-card-content">
+                <h3>Karnak & Luxor Temples</h3>
+                <p>Journey through the largest religious sites ever built by man.</p>
+            </div>
+        </div>
+        <div class="tour-card">
+            <img src="https://i.ibb.co/3DfLpXS/image.png" alt="Hot Air Balloon">
+            <div class="tour-card-content">
+                <h3>Hot Air Balloon Magic</h3>
+                <p>Sunrise views over the Nile and the temples from the sky.</p>
+            </div>
+        </div>
+        <div class="tour-card">
+            <img src="https://i.ibb.co/tT3WLXyG/image.png" alt="Felucca">
+            <div class="tour-card-content">
+                <h3>Private Car & Felucca</h3>
+                <p>Professional transportation and traditional sailing at sunset.</p>
+            </div>
         </div>
     </div>
 
-    <div class="tour-section">
-        <img src="https://i.ibb.co/QvRyzNq2/image.png" class="section-img" alt="Habu Temple">
-        <div class="content">
-            <h3>Habu Temple & Colossi of Memnon</h3>
-            <p>See the best-preserved colors of ancient Egypt at Medinet Habu and the giant guardians of the desert.</p>
-        </div>
+    <div class="booking-footer">
+        <a href="https://wa.me/201007419083?text=Hello!%20I%20want%20to%20book%20a%20tour%20with%20Luxor%20Vibe." class="btn-wa">Book Your Tour via WhatsApp</a>
+        <p style="margin-top: 15px; color: #888;">Contact: 01007419083</p>
     </div>
 
-    <h2>The East Bank Treasures</h2>
-    <div class="tour-section">
-        <img src="https://i.ibb.co/Zbs4rVh/image.png" class="section-img" alt="Karnak">
-        <div class="content">
-            <h3>Karnak & Luxor Temples</h3>
-            <p>Explore the massive pillars of Karnak and the sunset beauty of Luxor Temple in the city center.</p>
-        </div>
-    </div>
-
-    <h2>Adventures & Services</h2>
-    <div class="tour-section">
-        <img src="https://i.ibb.co/3DfLpXS/image.png" class="section-img" alt="Balloon">
-        <div class="content">
-            <h3>Hot Air Balloon & Nile Sailing</h3>
-            <p>Experience the sunrise from the sky and the peaceful Nile on a traditional Felucca boat.</p>
-        </div>
-    </div>
-
-    <div class="booking-box">
-        <h3>Ready to start your adventure?</h3>
-        <p>Contact me personally to customize your private tour with a professional guide.</p>
-        <a href="https://wa.me/201007419083?text=Hello%20Mahmoud!%20I%20found%20your%20website%20Luxor%20Vibe%20and%20want%20to%20book." class="btn-whatsapp">Book on WhatsApp</a>
-        <div class="contact-info">
-            📞 01007419083 | ✉️ montasrmahmoud180@gmail.com
-        </div>
-    </div>
 </div>
 
 </body>
