@@ -1,127 +1,96 @@
-# final-bot-project
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>موقعي الجديد</title>
-</head>
-<body>
-    <h1>مرحباً بك في موقعي</h1>
-    
-    <button onclick="openWA()" style="padding: 10px; background: #25D366; color: white; border: none; cursor: pointer;">
-        تواصل معي عبر واتساب
-    </button>
-
-    <script>
-        function openWA() {
-            window.open("https://wa.me/201007419083?text=مرحباً", "_blank");
-        }
-    </script>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxor & Aswan Luxury Tours</title>
+    <title>Amun Luxor Tours</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #b8860b; }
-        .service-card { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
-        .service-card img { width: 120px; height: 100px; object-fit: cover; }
-        .service-info { padding: 10px; flex-grow: 1; }
-        label { display: block; margin: 10px 0 5px; font-weight: bold; }
-        input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
-        .btn-whatsapp { background: #25D366; color: white; padding: 15px; border: none; width: 100%; border-radius: 5px; font-size: 18px; cursor: pointer; font-weight: bold; }
-        .btn-whatsapp:hover { background: #128C7E; }
+        body { 
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover; background-attachment: fixed; color: #f1c40f; font-family: 'Georgia', serif; margin: 0; padding: 20px;
+        }
+        .container { max-width: 850px; margin: auto; background: rgba(0, 0, 0, 0.75); padding: 30px; border: 2px solid #b8860b; border-radius: 20px; }
+        
+        /* تصميم صورة صاحب الشغل */
+        .profile-section { text-align: center; margin-bottom: 20px; }
+        .profile-img { 
+            width: 150px; height: 150px; border-radius: 50%; border: 3px solid #ffcc00; 
+            object-fit: cover; box-shadow: 0 0 15px #ffcc00;
+        }
+
+        h1 { text-align: center; font-size: 2.8em; margin: 10px 0 0; color: #ffcc00; }
+        .bio { text-align: center; font-style: italic; color: #ddd; margin-bottom: 30px; }
+        
+        .contact-info { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 30px; border: 1px dashed #ffcc00; }
+        .contact-info a { color: #fff; text-decoration: none; margin: 0 10px; display: block; margin-top: 5px; }
+
+        h2 { border-bottom: 2px solid #ffcc00; padding-bottom: 10px; margin-top: 40px; color: #ffcc00; text-transform: uppercase; }
+        p { color: #ccc; line-height: 1.6; }
+        .section-img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; margin: 15px 0; border: 1px solid #ffcc00; }
+        
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; background: #333; color: white; }
+        .btn-whatsapp { 
+            background: #25D366; color: white; padding: 20px; border: none; width: 100%; 
+            border-radius: 50px; font-size: 20px; cursor: pointer; font-weight: bold; 
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Luxor & Aswan Tours</h1>
-    <p style="text-align:center;">Book your dream trip now!</p>
-
-    <label>Full Name</label>
-    <input type="text" id="name" placeholder="Enter your name">
-
-    <label>Age</label>
-    <input type="number" id="age" placeholder="Your Age">
-
-    <label>Nationality</label>
-    <input type="text" id="nationality" placeholder="Your Country">
-
-    <h3>Select Your Services:</h3>
-
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1572431441273-07f52140c99a?auto=format&fit=crop&w=200&q=80" alt="East Bank">
-        <div class="service-info">
-            <input type="checkbox" class="service" value="East Bank (Karnak & Luxor Temples)"> <b>East Bank</b> (Karnak & Luxor)
-        </div>
+    
+    <div class="profile-section">
+        <img src="https://via.placeholder.com/150" class="profile-img" alt="Manager Image">
+        <h1>Amun Luxor Tours</h1>
+        <div class="bio">Amun Luxor – Where history meets adventure.</div>
     </div>
 
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=200&q=80" alt="West Bank">
-        <div class="service-info">
-            <input type="checkbox" class="service" value="West Bank (Kings Valley & Hatshepsut)"> <b>West Bank</b> (Kings Valley)
-        </div>
+    <div class="contact-info">
+        <h3>Contact Us for Details</h3>
+        <a href="tel:01007419083">📞 Call: 01007419083</a>
+        <a href="mailto:montasrmahmoud180@gamil.com">✉️ Email: montasrmahmoud180@gamil.com</a>
     </div>
 
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1520640023173-50a135e35804?auto=format&fit=crop&w=200&q=80" alt="Balloon">
-        <div class="service-info">
-            <input type="checkbox" class="service" value="Hot Air Balloon Ride"> <b>Hot Air Balloon</b>
-        </div>
+    <h2>West Bank Wonders</h2>
+    <img src="https://images.unsplash.com/photo-1539712105743-c603c626779a?auto=format&fit=crop&w=800&q=80" class="section-img">
+    <h3>Valley of the Kings & Queens</h3>
+    <p>Explore the royal tombs, including Tutankhamun and Nefertari. A journey through the afterlife of pharaohs.</p>
+    <h3>Hatshepsut & Habu Temples</h3>
+    <p>From the magnificent terrace temple of the female pharaoh to the vibrant carvings of Ramses III.</p>
+    <h3>Colossi of Memnon & More</h3>
+    <p>Witness the giant guardians and explore the Ramesseum and Deir el-Medina artisans' village.</p>
+
+    <h2>East Bank Treasures</h2>
+    <img src="https://images.unsplash.com/photo-1590076212644-672109439169?auto=format&fit=crop&w=800&q=80" class="section-img">
+    <h3>Karnak & Luxor Temples</h3>
+    <p>The world's largest religious complex and the heart of ancient Thebes, stunning by day and magical by night.</p>
+
+    <h2>Private Services</h2>
+    <p>✅ <b>Hot Air Balloon:</b> Sunrise flights over the Nile.<br>
+       ✅ <b>Felucca:</b> Traditional sailing at sunset.<br>
+       ✅ <b>Transport:</b> Private cars to Airports, Aswan, and beyond.<br>
+       ✅ <b>Guides:</b> Professional multilingual experts.</p>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+        <h3>Book Your Tour</h3>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="text" id="nationality" placeholder="Nationality">
+        <select id="tour">
+            <option value="West Bank">West Bank Tour</option>
+            <option value="East Bank">East Bank Tour</option>
+            <option value="Full Package">Full Package (Luxor & Aswan)</option>
+        </select>
+        <button class="btn-whatsapp" onclick="sendWA()">Contact on WhatsApp</button>
     </div>
-
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1563287664-9642517865f1?auto=format&fit=crop&w=200&q=80" alt="Felucca">
-        <div class="service-info">
-            <input type="checkbox" class="service" value="Felucca Nile Trip"> <b>Felucca</b> (Nile Boat Trip)
-        </div>
-    </div>
-
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1590076212644-672109439169?auto=format&fit=crop&w=200&q=80" alt="Aswan">
-        <div class="service-info">
-            <input type="checkbox" class="service" value="Aswan City Tour & Philae"> <b>Aswan Trip</b> (Philae Temple)
-        </div>
-    </div>
-
-    <label>Car Service & Guides</label>
-    <select id="extra">
-        <option value="None">Extra Services</option>
-        <option value="Private Car with Driver">Private Car Service</option>
-        <option value="Multilingual Guide">Professional Guide (All Languages)</option>
-        <option value="Hotel Booking">Hotel Reservation Service</option>
-    </select>
-
-    <button class="btn-whatsapp" onclick="sendWhatsApp()">Book via WhatsApp</button>
 </div>
 
 <script>
-    function sendWhatsApp() {
+    function sendWA() {
         const name = document.getElementById('name').value;
-        const age = document.getElementById('age').value;
-        const nationality = document.getElementById('nationality').value;
-        const extra = document.getElementById('extra').value;
-        
-        let selectedServices = [];
-        document.querySelectorAll('.service:checked').forEach((checkbox) => {
-            selectedServices.push(checkbox.value);
-        });
-
-        const phoneNumber = "201007419083"; // Your saved number
-        const message = `*New Booking Request*%0A%0A` +
-                        `*Name:* ${name}%0A` +
-                        `*Age:* ${age}%0A` +
-                        `*Nationality:* ${nationality}%0A` +
-                        `*Services:* ${selectedServices.join(", ")}%0A` +
-                        `*Extra:* ${extra}`;
-
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        const nat = document.getElementById('nationality').value;
+        const tour = document.getElementById('tour').value;
+        const msg = `*Amun Luxor Tours*%0A%0AHello! I am ${name} from ${nat}.%0AInterested in: *${tour}*.%0APlease provide more details.`;
+        window.open(`https://wa.me/201007419083?text=${msg}`, '_blank');
     }
 </script>
 
